@@ -5,6 +5,8 @@ import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend } from 'r
 const Dashboard = () => {
     const [sensorData, setSensorData] = useState([]);
 
+
+    //convert the following: http://localhost:3001/api/get-dataf (array) to json.
     const fetchSensorData = async () => {
         try {
             const response = await fetch('http://localhost:3001/api/get-data');
@@ -97,6 +99,27 @@ const Dashboard = () => {
                                     <Tooltip />
                                     <Legend />
                                     <Line type="monotone" dataKey="nutrientLevel" stroke="#FF8042"/>
+                                </LineChart>
+                            </ResponsiveContainer>
+                        </CardContent>
+                    </Card>
+                </Grid>
+                <Grid item xs={12} sm={6} md={4}>
+                    <Card>
+                        <CardContent>
+                            <Typography variant="h6">Temperature</Typography>
+                            <ResponsiveContainer width="100%" height={200} style={{ backgroundColor: 'red' }}>
+                                <LineChart data={sensorData}>
+                                    <CartesianGrid strokeDasharray="3 3" stroke="#ccc" />
+                                    <XAxis dataKey="timestamp" stroke="#666">
+                                        <Label value="Time" position="insideBottom" offset={-5} />
+                                    </XAxis>
+                                    <YAxis stroke="#666">
+                                        <Label value="temperature" position="insideLeft" angle={-90} />
+                                    </YAxis>
+                                    <Tooltip />
+                                    <Legend />
+                                    <Line type="monotone" dataKey="temperature" stroke="#8884d8" />
                                 </LineChart>
                             </ResponsiveContainer>
                         </CardContent>

@@ -7,6 +7,8 @@ import MongoDB from './components/MongoDB';
 import DrawerAppBar from './components/NavBar';
 import HomePage from './pages/HomePage';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import TeamInfoPage from './pages/TeamInfoPage';
+
 
 function App() {
     const startDate = '2023-04-05';

@@ -1,3 +1,4 @@
+// src/components/NavBar.js
 import React from 'react';
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
@@ -22,10 +23,10 @@ const navItems = [
     { name: 'Home', path: '/' },
     { name: 'Dashboard', path: '/dashboard' },
     { name: 'Camera', path: '#' },
-    { name: 'Team Info', path: '#' }
+    { name: 'Team Info', path: '/team-info' } // Update path here
 ];
 
-function DrawerAppBar(props) {
+function NavBar(props) {
     const { window } = props;
     const [mobileOpen, setMobileOpen] = React.useState(false);
 
@@ -125,4 +126,4 @@ function DrawerAppBar(props) {
     );
 }
 
-export default DrawerAppBar;
+export default NavBar;
