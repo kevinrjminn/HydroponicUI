@@ -1,0 +1,72 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap");
+
+.homePage {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../assets/images/background.jpg");
+    background-position: top;
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 100vh;
+    font-family: "Poppins", sans-serif;
+    /*margin-top: -64px;*/
+    padding: 0 2rem 2rem;
+    height: 50px;
+}
+
+.titleContainer {
+    padding: 1.5rem;
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 5px;
+    margin-bottom: 2rem;
+}
+
+.title {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: #333;
+    margin-bottom: 0.5rem;
+}
+
+.subtitle {
+    font-size: 1.25rem;
+    font-weight: 400;
+    color: #666;
+}
+
+.card {
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 5px;
+    width: 100%;
+}
+
+.cardTitle {
+    font-weight: 700;
+    color: #333;
+}
+
+.description {
+    font-size: 1rem;
+    color: #666;
+    text-align: justify;
+    line-height: 1.5;
+    margin-bottom: 1rem;
+}
+
+.videoContainer {
+    position: relative;
+    padding-bottom: 56.25%; /* 16:9 aspect ratio */
+    height: 0;
+    overflow: hidden;
+    margin-top: 1rem;
+}
+
+.videoContainer iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
