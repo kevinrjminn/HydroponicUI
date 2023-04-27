@@ -9,7 +9,7 @@ const Dashboard = () => {
     //convert the following: http://localhost:3001/api/get-dataf (array) to json.
     const fetchSensorData = async () => {
         try {
-            const response = await fetch('http://localhost:3001/api/get-data');
+            const response = await fetch('/api/get-data');
             const result = await response.json();
             if (response.status === 200) {
                 setSensorData(result.data.map(item => ({
