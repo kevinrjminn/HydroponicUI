@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Team Info - Hydroponic</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <link rel="stylesheet" href="css/teaminfo.css">
+</head>
+<body>
+<header>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <a class="navbar-brand" href="#">
+            <img src="images/CSU-logo.png" alt="CSU Logo" height="40">
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="https://eecs.csuohio.edu/~keminn/WebPages/home.html">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Dashboard</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">About</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="https://eecs.csuohio.edu/~keminn/WebPages/teaminfo.html">Team Info</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+</header>
+<div class="dimmed">
+    <div class="teamInfoPage">
+        <div class="container">
+            <div class="titleContainer">
+                <h3 class="title">Senior Design Team</h3>
+            </div>
+            <!-- Computer Science section -->
+            <div class="section-container">
+                <h4 class="section-title">Computer Science</h4> <hr>
+                <div class="cs-section">
+                    <div class="cs-contribution">
+                        <p>
+                            The computer science team focused on designing a dashboard to remotely monitor live
+                            hydroponic data through a web-application. Ensuring seamless communication
+                            between Rockwell Automation's Connected Component Workbench software system
+                            and the cloud database server. The team's responsibilities also included the design,
+                            development, and configuration of the cloud database, as well as guaranteeing the accurate sending,
+                            receiving, and retrieval of data. Utilizing the MQTT protocol,
+                            the team emphasized UI/UX, implemented API protocols, and developed
+                            a full-stack web page with a user-friendly design. In addition, they contributed to the
+                            designing and creation of the Senior Design project webpage.
+                        </p>
+                    </div>
+                    <div class="cs-vertical-line"></div>
+                    <div class="cs-members">
+                        <!-- Add team member photos and names here -->
+                        <div class="cs-member">
+                            <img src="images/member1.jpeg" alt="Member 1" class="cs-member-photo">
+                            <p class="cs-member-name">Kevin Minn</p>
+                        </div>
+                        <div class="cs-member">
+                            <img src="images/member2.jpg" alt="Member 2" class="cs-member-photo">
+                            <p class="cs-member-name">Leul M</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Computer Engineering section -->
+            <div class="section-container">
+                <h4 class="section-title">Computer Engineering</h4> <hr>
+                <div class="ce-section">
+                    <div class="ce-members">
+                        <!-- Add team member photos and names here -->
+                        <div class="ce-member">
+                            <img src="images/member3.png" alt="Member 3" class="ce-member-photo">
+                            <p class="ce-member-name">Shakeeb Rahman <br> Team Leader</p>
+                        </div>
+                        <div class="ce-member">
+                            <img src="images/member4.png" alt="Member 4" class="ce-member-photo">
+                            <p class="ce-member-name">Ian Henning</p>
+                        </div>
+                    </div>
+                    <div class="ce-vertical-line"></div>
+                    <div class="ce-contribution">
+                        <p>
+                            Shakeep Raham lead the Senior Design team,
+                            ensuring the successful completion of the project by effectively
+                            managing every aspect and facilitating the timely execution of tasks.
+                            The computer engineering team members were responsible for programming the Rockwell Automation Micro800 PLC,
+                            configuring the microcontrollers, and programming the sensors and actuators within the hydroponic system.
+                            Furthermore, they programmed Micro800 PLC unit using Rockwell Automation's Connected Component Workbench (CCW) software and communication protocols.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- Mechanical Engineering section -->
+            <div class="section-container">
+                <h4 class="section-title">Mechanical Engineering</h4> <hr>
+                <div class="me-section">
+                    <div class="me-contribution">
+                        <p>
+                            The mechanical engineering team members were responsible for designing the physical structure of the hydroponic system, selecting appropriate materials, and conducting stress and fluid dynamic analyses. They collaborated with the computer engineering and computer science teams to integrate the hardware and software components into the system.
+                        </p>
+                    </div>
+                    <div class="me-vertical-line"></div>
+                    <div class="me-members">
+                        <div class="me-member">
+                            <img src="images/member5.jpg" alt="Member 5" class="me-member-photo">
+                            <p class="me-member-name">Andrew</p>
+                        </div>
+                        <div class="me-member">
+                            <img src="images/member6.jpg" alt="Member 6" class="me-member-photo">
+                            <p class="me-member-name">Brian</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+</div>
+</body>
+</html>

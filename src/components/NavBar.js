@@ -20,7 +20,8 @@ import { Link as RouterLink } from 'react-router-dom';
 
 const drawerWidth = 240;
 const navItems = [
-    { name: 'Home', path: '/' },
+    // { name: 'Home', path: '/' },
+    { name: 'Home', path: 'https://eecs.csuohio.edu/~keminn/WebPages/home.html' },
     { name: 'Dashboard', path: '/dashboard' },
     { name: 'Camera', path: '#' },
     { name: 'Team Info', path: '/team-info' } // Update path here
