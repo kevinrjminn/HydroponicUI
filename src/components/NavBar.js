@@ -23,7 +23,7 @@ const navItems = [
     // { name: 'Home', path: '/' },
     { name: 'Home', path: 'https://eecs.csuohio.edu/~keminn/WebPages/home.html' },
     { name: 'Dashboard', path: '/dashboard' },
-    { name: 'Camera', path: '#' },
+    { name: 'About', path: '#' },
     { name: 'Team Info', path: '/team-info' } // Update path here
 ];
 
@@ -71,19 +71,114 @@ function NavBar(props) {
 
     const container = window !== undefined ? () => window.document.body : undefined;
 
+    // return (
+    //     <ThemeProvider theme={theme}>
+    //         <Box sx={{ display: 'flex' }}>
+    //             <CustomToolbar>
+    //                 <CssBaseline />
+    //                 <AppBar
+    //                     component="nav"
+    //                     className="appbar-static"
+    //                     sx={{
+    //                         display: 'flex',
+    //                         justifyContent: 'space-between',
+    //                         alignItems: 'center',
+    //                         backgroundColor: '#333',
+    //                         padding: '10px',
+    //                         position: 'fixed',
+    //                         top: 0,
+    //                         left: 0,
+    //                         width: '100%',
+    //                         zIndex: 100,
+    //                     }}
+    //                 >
+    //                     <Toolbar>
+    //                         <IconButton
+    //                             color="inherit"
+    //                             aria-label="open drawer"
+    //                             edge="start"
+    //                             onClick={handleDrawerToggle}
+    //                             sx={{
+    //                                 display: { sm: 'none' },
+    //                                 border: '2px solid #fff',
+    //                                 backgroundColor: 'transparent',
+    //                                 cursor: 'pointer',
+    //                             }}
+    //                         >
+    //                             <MenuIcon />
+    //                         </IconButton>
+    //                         <Typography
+    //                             variant="h6"
+    //                             component="div"
+    //                             sx={{ flexGrow: 1, display: { xs: 'none', sm: 'block' } }}
+    //                         >
+    //                             {navItems.map((item) => (
+    //                                 <RouterLink
+    //                                     key={item.name}
+    //                                     to={item.path}
+    //                                     style={{ textDecoration: 'none' }}
+    //                                 >
+    //                                     <Button sx={{ color: '#fff' }}>{item.name}</Button>
+    //                                 </RouterLink>
+    //                             ))}
+    //                         </Typography>
+    //                     </Toolbar>
+    //                 </AppBar>
+    //             </CustomToolbar>
+    //             <Box component="nav">
+    //                 <Drawer
+    //                     container={container}
+    //                     variant="temporary"
+    //                     open={mobileOpen}
+    //                     onClose={handleDrawerToggle}
+    //                     ModalProps={{
+    //                         keepMounted: true, // Better open performance on mobile.
+    //                     }}
+    //                     sx={{
+    //                         display: { xs: 'block', sm: 'none' },
+    //                         '& .MuiDrawer-paper': { boxSizing: 'border-box', width: drawerWidth },
+    //                     }}
+    //                 >
+    //                     {drawer}
+    //                 </Drawer>
+    //             </Box>
+    //         </Box>
+    //     </ThemeProvider>
+    // );
+
     return (
         <ThemeProvider theme={theme}>
             <Box sx={{ display: 'flex' }}>
                 <CustomToolbar>
                     <CssBaseline />
-                    <AppBar component="nav" className="appbar-static">
+                    <AppBar
+                        component="nav"
+                        className="appbar-static"
+                        sx={{
+                            display: 'flex',
+                            justifyContent: 'space-between',
+                            alignItems: 'center',
+                            backgroundColor: '#333',
+                            padding: '10px',
+                            position: 'fixed',
+                            top: 0,
+                            left: 0,
+                            width: '100%',
+                            zIndex: 100,
+                        }}
+                    >
                         <Toolbar>
                             <IconButton
                                 color="inherit"
                                 aria-label="open drawer"
                                 edge="start"
                                 onClick={handleDrawerToggle}
-                                sx={{ mr: 2, display: { sm: 'none' } }}
+                                sx={{
+                                    display: { sm: 'none' },
+                                    border: '2px solid #fff',
+                                    backgroundColor: 'transparent',
+                                    cursor: 'pointer',
+                                }}
                             >
                                 <MenuIcon />
                             </IconButton>
