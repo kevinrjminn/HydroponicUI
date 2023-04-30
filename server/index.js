@@ -1,13 +1,13 @@
-const path =  require('path');
+const path = require('path');
 const express = require('express');
 const cors = require('cors');
-const { fetchLatestData, fetchDataRange, fetchAllData} = require('./dataController');
+const { fetchLatestData, fetchDataRange, fetchAllData } = require('./dataController');
 
 const app = express();
 const PORT = process.env.PORT || 3001;
 
 app.use(cors());
-app.use(express.static(path.join(__dirname, 'build')));
+app.use(express.static(path.join(__dirname, '..', 'build')));
 
 app.get('/api/get-data', async (req, res) => {
     try {
@@ -24,6 +24,7 @@ app.get('/api/get-data', async (req, res) => {
         res.status(500).json({ error: 'Failed to fetch data from MongoDB. Error: ' + error.message });
     }
 });
+
 app.get('/api/get-data-range', async (req, res) => {
     const startTime = req.query.startTime;
     const endTime = req.query.endTime;
@@ -54,9 +55,11 @@ app.get('/api/get-latest-data', async (req, res) => {
         res.status(500).json({ error: 'Failed to fetch data from MongoDB. Error: ' + error.message });
     }
 });
-app.get('*',(req,res)=>{
-    res.sendFile(path.join(__dirname, 'build','index.html'));
+
+app.get('*', (req, res) => {
+    res.sendFile(path.join(__dirname, '..', 'build', 'index.html'));
 });
+
 app.listen(PORT, () => {
     console.log(`Server is running on http://localhost:${PORT}`);
 });
