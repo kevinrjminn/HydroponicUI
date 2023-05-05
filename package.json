@@ -38,7 +38,8 @@
     "start": "node  server/index.js",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "prebuild": "process.env.CI = false"
   },
   "eslintConfig": {
     "extends": [
