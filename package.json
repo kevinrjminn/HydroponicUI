@@ -2,6 +2,7 @@
   "name": "hydroponic-ui",
   "version": "0.1.0",
   "private": true,
+  "proxy": "http://localhost:3001",
   "dependencies": {
 
     "@azure/storage-blob": "^12.13.0",
@@ -35,7 +36,7 @@
   "scripts": {
     "start:dev": "react-scripts start",
     "start": "node  server/index.js",
-    "build": "CI=false react-scripts build",
+    "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
@@ -57,6 +58,6 @@
       "last 1 safari version"
     ]
 
-  },
-  "proxy": "http://localhost:3001"
+  }
+
 }

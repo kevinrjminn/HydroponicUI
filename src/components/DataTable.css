@@ -1,0 +1,38 @@
+.tbl-container {
+   height: 400px;
+   overflow-y: auto;
+   margin-bottom:5px;
+   border: 2px solid black;
+ }
+ 
+ 
+ 
+ .form-field {
+   margin-right: 20px;
+   margin-bottom:5px;
+ }
+ 
+ .formBtn {
+   margin-bottom: 5px;
+   margin-left: auto;
+ 
+ }
+ 
+ .sortBtn {
+   margin-right: 5px;
+ }
+ 
+ 
+ thead {
+   position: sticky;
+   top: 0;
+   background-color: darkgrey; 
+   color: white;
+   z-index: 100;
+ }
+ 
+ th, td {
+   padding: 8px;
+   text-align: left;
+   border: 1px solid #ccc;
+ }

@@ -1,12 +1,16 @@
 import React, { useState, useEffect } from 'react';
-import { ResponsiveContainer, Label } from 'recharts';
-import { Container, Grid, Typography, Card, CardContent } from '@mui/material';
-import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend } from 'recharts';
+import { Container, Typography, Box } from '@mui/material';
+import Alerts from './Alerts';
+import DataTable from './DataTable';
+import SensorCards from './SensorCards';
+import PlantProgress from './PlantProgress';
+import { useMediaQuery } from '@mui/material';
+
 const Dashboard = () => {
+    const isLargeScreen = useMediaQuery('(min-width:900px)');
+
     const [sensorData, setSensorData] = useState([]);
 
-
-    //convert the following: http://localhost:3001/api/get-dataf (array) to json.
     const fetchSensorData = async () => {
         try {
             const response = await fetch('/api/get-data');
@@ -27,6 +31,7 @@ const Dashboard = () => {
         }
     };
 
+
     useEffect(() => {
         const intervalId = setInterval(() => {
             fetchSensorData();
@@ -35,100 +40,37 @@ const Dashboard = () => {
         return () => clearInterval(intervalId);
     }, []);
     return (
-        <Container>
-            <Typography variant="h4" align="center" gutterBottom>
-                Hydroponic Monitoring Dashboard
-            </Typography>
-            <Grid container spacing={3}>
-                {/* ... (Temperature Card) */}
-                <Grid item xs={12} sm={6} md={4}>
-                    <Card>
-                        <CardContent>
-                            <Typography variant="h6">Humidity</Typography>
-                            <ResponsiveContainer width="100%" height={200} style={{ backgroundColor: 'lightgreen' }}>
-                                <LineChart data={sensorData}>
-                                    <CartesianGrid strokeDasharray="3 3" stroke="#ccc" />
-                                    <XAxis dataKey="timestamp" stroke="#666">
-                                        <Label value="Time" position="insideBottom" offset={-5} />
-                                    </XAxis>
-                                    <YAxis stroke="#666">
-                                        <Label value="%" position="insideLeft" angle={-90} />
-                                    </YAxis>
-                                    <Tooltip />
-                                    <Legend />
-                                    <Line type="monotone" dataKey="humidity" stroke="#82ca9d" />
-                                </LineChart>
-                            </ResponsiveContainer>
-                        </CardContent>
-                    </Card>
-                </Grid>
-                <Grid item xs={12} sm={6} md={4}>
-                    <Card>
-                        <CardContent>
-                            <Typography variant="h6">pH Level</Typography>
-                            <ResponsiveContainer width="100%" height={200} style={{ backgroundColor: 'red' }}>
-                                <LineChart data={sensorData}>
-                                    <CartesianGrid strokeDasharray="3 3" stroke="#ccc" />
-                                    <XAxis dataKey="timestamp" stroke="#666">
-                                        <Label value="Time" position="insideBottom" offset={-5} />
-                                    </XAxis>
-                                    <YAxis stroke="#666">
-                                        <Label value="pH" position="insideLeft" angle={-90} />
-                                    </YAxis>
-                                    <Tooltip />
-                                    <Legend />
-                                    <Line type="monotone" dataKey="pH" stroke="#8884d8" />
-                                </LineChart>
-                            </ResponsiveContainer>
-                        </CardContent>
-                    </Card>
-                </Grid>
-                <Grid item xs={12} sm={6} md={4}>
-                    <Card>
-                        <CardContent>
-                            <Typography variant="h6">Nutrient Level</Typography>
-                            <ResponsiveContainer width="100%" height={200} style={{ backgroundColor: 'lightgreen' }}>
-                                <LineChart data={sensorData}>
-                                    <CartesianGrid strokeDasharray="3 3" stroke="#ccc" />
-                                    <XAxis dataKey="timestamp" stroke="#666">
-                                        <Label value="Time" position="insideBottom" offset={-5} />
-                                    </XAxis>
-                                    <YAxis stroke="#666">
-                                        <Label value="PPM" position="insideLeft" angle={-90} />
-                                    </YAxis>
-                                    <Tooltip />
-                                    <Legend />
-                                    <Line type="monotone" dataKey="nutrientLevel" stroke="#FF8042"/>
-                                </LineChart>
-                            </ResponsiveContainer>
-                        </CardContent>
-                    </Card>
-                </Grid>
-                <Grid item xs={12} sm={6} md={4}>
-                    <Card>
-                        <CardContent>
-                            <Typography variant="h6">Temperature</Typography>
-                            <ResponsiveContainer width="100%" height={200} style={{ backgroundColor: 'red' }}>
-                                <LineChart data={sensorData}>
-                                    <CartesianGrid strokeDasharray="3 3" stroke="#ccc" />
-                                    <XAxis dataKey="timestamp" stroke="#666">
-                                        <Label value="Time" position="insideBottom" offset={-5} />
-                                    </XAxis>
-                                    <YAxis stroke="#666">
-                                        <Label value="temperature" position="insideLeft" angle={-90} />
-                                    </YAxis>
-                                    <Tooltip />
-                                    <Legend />
-                                    <Line type="monotone" dataKey="temperature" stroke="#8884d8" />
-                                </LineChart>
-                            </ResponsiveContainer>
-                        </CardContent>
-                    </Card>
-                </Grid>
-            </Grid>
+        <Container maxWidth={isLargeScreen ? false : 'lg'}>
+            {/*<Sidebar />*/}
+            <Box sx={{ paddingTop:'66px',paddingLeft: '30px', display: 'flex', flexDirection: 'column', height: '100%' }}> {}
+                <Typography variant="h4" align="center" gutterBottom>
+                    Hydroponic Monitoring Dashboard
+                </Typography>
+
+
+                <SensorCards sensorData={sensorData} />
+                <hr/>
+                <br/>
+
+                <Box mt={4} flexGrow={1}>
+                    <Typography variant="h6" align="center" gutterBottom>
+                        Plant Progress
+                    </Typography>
+                    <PlantProgress />
+                </Box>
+                <hr/>
+                <br/>
+
+                <center><Box mt={4} flexGrow={1}>
+                    <h3>Data Table</h3>
+                    <DataTable />
+                </Box>
+                </center>
+
+            </Box>
         </Container>
     );
-
 };
 
 export default Dashboard;
+

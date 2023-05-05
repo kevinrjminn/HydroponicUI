@@ -1,47 +1,42 @@
 import React from 'react';
-import './App.css';
+import { BrowserRouter as Router, Route, Routes, useLocation } from 'react-router-dom';
+import { Box, Container, Grid } from '@mui/material'; // Remove Hidden import
 import Dashboard from './components/Dashboard';
-import { Container, Typography } from '@mui/material';
-import GreenProgressBar from './components/GreenProgressBar';
-import DrawerAppBar from './components/NavBar';
 import HomePage from './pages/HomePage';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import TeamInfoPage from './pages/TeamInfoPage';
+import TeamInfoPage from './pages/TeamPage';
+import NavBar from './components/NavBar';
+import TeamPage from "./pages/TeamPage";
 
-function App() {
-    const startDate = '2023-04-05';
+const AppContent = () => {
+    const location = useLocation();
 
     return (
-        <Router>
-            <div className="App">
-                <DrawerAppBar />
-                <div className="content">
+        <Container maxWidth="lg">
+            <Grid container spacing={3}>
+                <Grid item xs={12} sm={12} md={location.pathname === '/' ? 12 : 10}>
                     <Routes>
-                        <Route path="/" element={<HomePage />} />
-                        <Route path="/team" element={<TeamInfoPage />} /> {/* Add this route */}
-                        <Route
-                            path="/dashboard"
-                            element={
-                                <>
-                                    <Dashboard />
+                        {/* Add routes for different pages */}
+                        <Route exact path="/" element={<HomePage />} />
+                        <Route path="/dashboard" element={<Dashboard />} />
 
-                                    <Container>
-                                        <Typography variant="h5" align="center" gutterBottom>
-                                            Harvest progress
-                                        </Typography>
-                                        <GreenProgressBar startDate={startDate} />
-                                        <Typography variant="h6" align="center" gutterBottom>
-                                        </Typography>
-                                    </Container>
-                                </>
-                            }
-                        />
-                        {/* Add other routes here as needed */}
+                        <Route path="/TeamPage" element={<TeamPage/>} />*/}
+                        {/* ... other routes */}
                     </Routes>
-                </div>
-            </div>
+                </Grid>
+            </Grid>
+        </Container>
+    );
+};
+
+const App = () => {
+    return (
+        <Router>
+            <NavBar /> {/* Add the NavBar component here */}
+            <Box pt={3}> {/* Add a Box component with some top padding */}
+                <AppContent />
+            </Box>
         </Router>
     );
-}
+};
 
 export default App;
