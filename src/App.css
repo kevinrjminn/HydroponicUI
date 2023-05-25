@@ -33,12 +33,11 @@
   right: 0;
   z-index: 1030;
 }
-.custom-navbar-bg {
-  background-color: #007500;
-}
+
 .custom-navbar-bg {
   background-color: #21B6A8;
 }
+
 .background-image {
   background-size: cover;
   background-position: center;
@@ -49,7 +48,6 @@
   left: 0;
   z-index: -1;
 }
-
 
 .App-link {
   color: #61dafb;

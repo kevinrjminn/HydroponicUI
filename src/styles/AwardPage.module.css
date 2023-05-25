@@ -1,0 +1,118 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap");
+
+.awardPage {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    margin: 64px;
+}
+
+.awardHeader {
+    position: relative;
+    background-size: cover;
+    background-position: center;
+    padding: 4rem 0;
+}
+
+.awardTitleContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    z-index: 1;
+    margin-top: 90px;
+}
+
+.awardTitle {
+    margin-bottom: 0.5rem;
+    color: #6a6d6b;
+    font-size: 3rem;
+    font-weight: 700;
+    text-align: center;
+    text-shadow: 0 1px 4px rgb(106, 109, 107);
+}
+
+.awardSubtitle {
+    color: #6a6d6b;
+    font-size: 1.5rem;
+    font-weight: 500;
+    text-align: center;
+    text-shadow: 0 1px 4px rgb(106, 109, 107);
+}
+
+.awardCard {
+    background-color: #bbb8b8;
+    padding: 4rem 0;
+    margin-bottom: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border: 2px solid #6a6d6b;
+}
+
+.awardCardContent {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.awardCardTitle {
+    color: #6a6d6b;
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+    text-shadow: 0 1px 4px rgb(106, 109, 107);
+}
+
+.awardDescription {
+    font-size: 1rem;
+    line-height: 1.5;
+    margin-bottom: 2rem;
+    text-align: justify;
+    color: #6a6d6b;
+}
+
+.awardFooter {
+    padding: 2rem 0;
+    background-color: #292929;
+    color: #fff;
+    text-align: center;
+}
+
+.awardFooterText {
+    font-size: 1rem;
+    font-weight: 400;
+}
+
+.awardMacImage,
+.awardImage {
+    width: 100%;
+    max-width: 800px; /* Increase the maximum width */
+    height: auto;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.awardNewSection {
+    background-color: #ffffff;
+    padding: 2rem 0;
+}
+
+.awardNewSectionTitle {
+    text-align: center;
+    margin-bottom: 2rem;
+    font-size: 2rem;
+}
+
+.awardNewSectionContentLeft,
+.awardNewSectionContentRight {
+    text-align: left;
+}
+
+.awardContainerTitle {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}

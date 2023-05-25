@@ -2,6 +2,8 @@ import React from "react";
 import styles from "../styles/HomePage.module.css";
 import Container from "@mui/material/Container";
 import rockwellLogo from "../assets/images/rockwell.png";
+import forkfarmsLogo from "../assets/images/ForkFarms.png";
+import CSULogo from "../assets/images/CSU-logo.png";
 import {Grid} from "@mui/material";
 
 
@@ -14,15 +16,16 @@ const HomePage = () => {
                         <h1 className={styles.title}>Hydroponic System</h1>
                         <h3>Watch our system in action</h3>
                         <div className={styles.videoContainer}>
-                            {/*<div className={styles.videoContainer}>*/}
-                            <iframe width="560" height="315"
-                                    src="https://www.youtube.com/embed/5-RZWJoRj10?autoplay=1&loop=1&start=2"
-                                    title="YouTube video player" frameBorder="0"
-                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                                    allowFullScreen
-                                    playsinline
+                            <iframe
+                                width="560"
+                                height="315"
+                                src="https://www.youtube.com/embed/5-RZWJoRj10?playlist=5-RZWJoRj10&autoplay=1&loop=1&start=2"
+                                title="YouTube video player"
+                                frameBorder="0"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                allowFullScreen
+                                playsinline
                             ></iframe>
-
                         </div>
                         <h2 className={styles.subtitle}>
                             Grow plants efficiently with our hydroponic system
@@ -102,6 +105,16 @@ const HomePage = () => {
                 <Container maxWidth="md">
                     <h2 className={styles.sponsorsTitle}>Our Sponsors</h2>
                     <div className={styles.sponsorLogos}>
+                        <img
+                            src={forkfarmsLogo}
+                            alt="Fork Farms Logo"
+                            className={styles.sponsorLogo}
+                        />
+                        <img
+                            src={CSULogo}
+                            alt="CSU Logo"
+                            className={styles.sponsorLogo}
+                        />
                         <img
                             src={rockwellLogo}
                             alt="Rockwell Automation Logo"
